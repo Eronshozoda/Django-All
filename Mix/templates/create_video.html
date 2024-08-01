@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+
+
+    /* Общие стили */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffe4e1;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #dc143c;
+}
+
+/* Стили для формы */
+form {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px solid #dc143c;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form p {
+    margin-bottom: 20px;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #dc143c;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="file"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #dc143c;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form input[type="file"]:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #ff4500;
+}
+
+form input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #dc143c;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover {
+    background-color: #ff4500;
+}
+
+/* Стили для сообщений об ошибках */
+.errorlist {
+    list-style: none;
+    padding: 0;
+    color: #e74c3c;
+}
+
+.errorlist li {
+    margin-bottom: 5px;
+}
+
+/* Добавление стилей для плейсхолдеров */
+form input::placeholder,
+form textarea::placeholder {
+    color: #888;
+}
+
+
+
+</style>
+
+
+<h1 style="text-align:center;">Add a new Video</h1>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {% comment %} <label for="video">Video:</label>
+    <input type="file" name="video_file" accept="media/video"> {% endcomment %}
+    <input type="Submit" value="Save"/>
+</form>
+
+{% endblock content %}

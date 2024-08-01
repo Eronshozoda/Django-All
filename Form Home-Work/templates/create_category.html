@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    form {
+        width: 50%;
+        margin: 0 auto;
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    
+    input[type="text"],
+    input[type="date"],
+    select {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+    
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    
+    /* Optional: Add styling for form field errors */
+    .error {
+        color: red;
+    }
+</style>
+
+<h1>Add a new category </h1>
+
+
+
+<form method="post" enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+    
+
+    {{ form.as_p }}
+
+    <input type="Submit" value="Save"/>
+
+</form>
+
+{% endblock content %}

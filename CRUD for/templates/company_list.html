@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    /* General table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+/* Table header styles */
+th {
+    background-color: #f2f2f2;
+    color: #333;
+    text-align: left;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+/* Table row styles */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+/* Table cell styles */
+td {
+    text-align: left;
+    vertical-align: top;
+}
+
+/* Table responsive design */
+@media (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    tr {
+        margin-bottom: 15px;
+    }
+
+    th, td {
+        text-align: right;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    th::before, td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
+
+</style>
+
+<table>
+    <tr>
+        <td>ID</td>
+        <td>NAME</td>
+        <td>DECCRIPTION</td>
+        <td>YEAR OF FOUNDATION</td>
+        <td>Condition_is_being_assessed</td>
+    </tr>
+    {% for com in object_list  %}
+    <tr>
+        <td>{{com.id}}</td>
+        <td>{{com.name}}</td>
+        <td>{{com.DECCRIPTION}}</td>
+        <td>{{com.year_of_foundation}}</td>
+        <td>{{com.Condition_is_being_assessed}}</td>
+    </tr>    
+    
+    {% endfor %}
+
+</table>
+
+{% endblock  %}
+
+

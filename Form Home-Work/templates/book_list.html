@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<table>
+    <tr>
+        <td>ID</td>
+        <td>NAME</td>
+        <td>AUTHOR</td>
+        <td>GENRE</td>
+        
+        
+    </tr>
+    {% for emp in object_list %}
+    <tr>
+        <td>{{emp.id}}</td>
+        <td>{{emp.title}}</td>
+        <td>{{emp.author}}</td>
+        <td>{{emp.genre}}</td>       
+    </tr>
+     {% endfor %} 
+</table>
+{% endblock content %}

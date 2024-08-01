@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<table>
+    <tr>
+        <td>Name</td>
+    </tr>
+
+    {% for cur in object_list  %}
+
+    <tr>
+        <td>{{cur.name}}</td>
+        
+    </tr>
+
+    
+    {% endfor %}
+
+</table>
+
+{% endblock content %}

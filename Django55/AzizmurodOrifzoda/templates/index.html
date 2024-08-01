@@ -1,0 +1,87 @@
+{% extends "home.html" %}
+
+{% block content %}
+    <style>
+        a{
+            font-size: 20px;
+            text-decoration: none;
+            color: darkblue
+        }
+        td{
+            border: 1px solid black;
+            border-collapse:collapse ;
+            text-align: center;
+        }
+        h1{
+            color: white;
+        }
+   /* Стиль для самой таблицы */
+table {
+    width: 100%;  /* Ширина таблицы на всю доступную ширину */
+    border-collapse: collapse;  /* Объединение границ ячеек */
+    margin: 20px 0;  /* Отступы сверху и снизу */
+    font-family: Arial, sans-serif;  /* Шрифт таблицы */
+}
+
+/* Стиль для заголовков таблицы */
+table th {
+    background-color: #f2f2f2;  /* Светло-серый фон */
+    color: #333;  /* Тёмно-серый цвет текста */
+    padding: 10px;  /* Внутренние отступы */
+    text-align: left;  /* Выравнивание текста по левому краю */
+    border-bottom: 2px solid #ccc;  /* Нижняя граница */
+}
+
+/* Стиль для строк таблицы */
+table tr {
+    border-bottom: 1px solid #ccc;  /* Граница снизу для каждой строки */
+}
+
+/* Стиль для ячеек таблицы */
+table td {
+    padding: 10px;  /* Внутренние отступы */
+    text-align: left;  /* Выравнивание текста по левому краю */
+}
+
+/* Чередование цвета строк */
+table tr:nth-child(even) {
+    background-color: #f9f9f9;  /* Светло-серый фон для чётных строк */
+}
+
+table tr:hover {
+    background-color: #f1f1f1;  /* Фон строки при наведении курсора */
+}
+
+    </style>
+  <h1>TaskManager</h1>
+  <table>
+    <tr>
+        <th style="border: 2px solid black;">Id</th>
+        <th style="border: 2px solid black;">First Name </th>
+        <th style="border: 2px solid black;">Last Name</th>
+        <th style="border: 2px solid black;">age</th>
+        <th style="border: 2px solid black;">Email</th>
+        <th style="border: 2px solid black;">Phon Number</th>
+        <th style="border: 2px solid black;">Addres</th>
+        <th style="border: 2px solid black;" colspan="2">Action</th>
+    </tr>
+  
+  
+    {% for user in users %}
+    <tr>
+    <td >{{user.id}}</td>
+    <td>{{user.fname}}</td>
+    <td>{{user.lname}}</td>
+    <td>{{user.age}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.phone_number}}</td>
+    <td>{{user.adress}}</td>
+
+    <td><a href="delate-user/{{user.id}}" >Delate</a></td>
+    <td><a href="update-user/{{user.id}}" >Update</a></td>
+    </tr>
+
+{% endfor %}
+</table>
+  
+{% endblock content %}

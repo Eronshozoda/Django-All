@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<style>
+  .Sec1{
+    background-image : url("{% static 'image/C:\Users\SAIYOD\Desktop\Django\static\image\la.jpg' %}");      
+    }
+
+  /* body{
+    background-image : url("{% static 'image/C:\Users\SAIYOD\Desktop\Django\static\image\la.jpg' %}");      
+  } */
+
+  .Sec1{
+    text-align: center;
+    color: white;
+  }
+
+  .Avval{
+    display: flex;
+    position: fixed;
+    top: 0%;
+    justify-content:space-evenly;
+    width: 100%;
+    height: 30px;
+    background-color: #282828;
+  }
+
+  .headder{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: red; */
+    color: white;
+    font-size: 20px;
+
+    }
+
+  .headder a{
+    color: white;
+  }
+
+  .image{
+    text-align: center;
+    margin: auto;
+    width: 80%;
+    height: 300px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+  .My_foot{
+    width: 100%;
+    height: 200px;
+    background-color: #F7F7F7;
+    text-align: center;
+  }
+.Sec2{
+  text-align: center;
+}
+
+
+
+  
+</style>
+<body>
+  <div class="Avval">
+    <div class="headder">      
+      <a href="{% url 'homepage' %}">Home</a> 
+      <a href="{% url 'about' %}">About us</a> 
+      <a href="{% url 'user' %}">User</a>      
+    </div>
+  </div>
+
+    {% block content %}
+    <div class="Sec1">
+      <h1 style="margin-bottom: 25px; padding-top: 500px">Los Angles</h1>
+      <p>We had the best time playing at Venice Beach!</p>
+    </div>
+
+
+    <div class="Sec2">
+      <h1 style="margin-bottom: 20px">THE BAND</h1>
+      <p style="margin-bottom: 30px">We love music</p>
+      <p>
+        We have created a fictional band website. Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </div>
+
+    <div class="image">
+      <div class="Surat">
+        <p>Name</p>
+        <!-- <img
+          style="width: 200px; height: 200px; padding: 20px 0px"
+          src="/image/bandmember.jpg"
+          alt=""
+        /> -->
+        <img style="width: 200px; height: 200px; padding: 20px 0px" src="{% static 'images/C:\Users\SAIYOD\Desktop\Django\static\image\bandmember.jpg'%}" alt="">
+
+      </div>
+      <div class="Surat">
+        <p>Name</p>
+        <!-- <img
+          style="width: 200px; height: 200px; padding: 20px 0px"
+          src="/image/bandmember.jpg"
+          alt=""
+        /> -->
+
+        <img style="width: 200px; height: 200px; padding: 20px 0px" src="{% static 'images/C:\Users\SAIYOD\Desktop\Django\static\image\bandmember.jpg'%}" alt="">
+
+      </div>
+      <div class="Surat">
+        <p>Name</p>
+        <!-- <img
+          style="width: 200px; height: 200px; padding: 20px 0px"
+          src="/image/bandmember.jpg"
+          alt=""
+        /> -->
+        <img style="width: 200px; height: 200px; padding: 20px 0px" src="{% static 'images/C:\Users\SAIYOD\Desktop\Django\static\image\bandmember.jpg'%}" alt="">
+
+      </div>
+    </div>
+    
+
+
+    {% endblock content %}
+
+<footer class="My_foot">
+    <img style="margin-top: 60px;" src="{% static 'images/  C:\Users\SAIYOD\Desktop\Django\static\image\Soc Seti.png'%}" alt="">
+  <p style="margin-top: 20px;">Powered by <span style="text-decoration: underline;">w3.css</span> </p>
+</footer>
+</body>
+</html>

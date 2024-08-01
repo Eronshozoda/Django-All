@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+
+    /* General form styles */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form heading */
+h1 {
+    text-align: center;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* CSRF token hidden input */
+input[name="csrfmiddlewaretoken"] {
+    display: none;
+}
+
+/* Form fields */
+form p {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="file"],
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Submit button */
+form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Error messages */
+.errorlist {
+    color: red;
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+    }
+
+    form input[type="submit"] {
+        font-size: 14px;
+    }
+}
+
+
+</style>
+ 
+
+
+<h1>Add a new Company </h1>
+
+
+
+<form method="post" enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+    
+
+    {{ form.as_p }}
+
+    <input type="Submit" value="Save"/>
+
+</form>
+
+{% endblock content %}

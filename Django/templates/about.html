@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <style>
+        .Sec1{
+        background-image : url("{% static 'image/C:\Users\SAIYOD\Desktop\Django\static\image\la.jpg' %}");            
+      }
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+    
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+  </head>
+  <body>
+    <div class="nav">
+      <div class="nav_text">
+        <p>Home</p>
+        <p>Band</p>
+        <p>Your</p>
+        <p>Contact</p>
+        <p>More</p>
+      </div>
+      <div style="padding: 0px 15px" class="logo">
+        <!-- <img src="/image/Снимок экрана 2024-02-17 103253.png" alt="" /> -->
+        <img src="{% static 'images/C:\Users\SAIYOD\Desktop\Django\static\image\icon.jpg' %}" alt="">
+      </div>
+    </div>
+    <div class="Sec1">
+      <h1 style="margin-bottom: 25px; padding-top: 500px">Los Angles</h1>
+      <p>We had the best time playing at Venice Beach!</p>
+    </div>
+    <div class="Sec2">
+      <h1 style="margin-bottom: 20px">THE BAND</h1>
+      <p style="margin-bottom: 30px">We love music</p>
+      <p>
+        We have created a fictional band website. Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </div>
+    <div class="image">
+      <div class="Surat">
+        <p>Name</p>
+        <!-- <img
+          style="width: 200px; height: 200px; padding: 20px 0px"
+          src="/image/bandmember.jpg"
+          alt=""
+        /> -->
+        <img style="width: 200px; height: 200px; padding: 20px 0px" src="{% static 'images/C:\Users\SAIYOD\Desktop\Django\static\image\bandmember.jpg'%}" alt="">
+
+      </div>
+      <div class="Surat">
+        <p>Name</p>
+        <!-- <img
+          style="width: 200px; height: 200px; padding: 20px 0px"
+          src="/image/bandmember.jpg"
+          alt=""
+        /> -->
+
+        <img style="width: 200px; height: 200px; padding: 20px 0px" src="{% static 'images/C:\Users\SAIYOD\Desktop\Django\static\image\bandmember.jpg'%}" alt="">
+
+      </div>
+      <div class="Surat">
+        <p>Name</p>
+        <!-- <img
+          style="width: 200px; height: 200px; padding: 20px 0px"
+          src="/image/bandmember.jpg"
+          alt=""
+        /> -->
+        <img style="width: 200px; height: 200px; padding: 20px 0px" src="{% static 'images/C:\Users\SAIYOD\Desktop\Django\static\image\bandmember.jpg'%}" alt="">
+
+      </div>
+    </div>
+    <div class="Sec3">
+      <h1 style="padding-top: 80px; margin-bottom: 20px">Tour Dates</h1>
+      <p>Remember to book your tickets!</p>
+    </div>
+    <div class="Sec4">
+      <div class="September">
+        <p style="padding-top: 20px">
+          September
+          <span style="color: white; background-color: red; margin-left: 20px"
+            >Sold out</span
+          >
+        </p>
+        <hr style="height: 20px" />
+        <p>
+          October
+          <span style="color: white; background-color: red; margin-left: 20px"
+            >Sold out</span
+          >
+        </p>
+        <hr style="height: 20px" />
+        <p>November</p>
+      </div>
+      <div class="Sec5">
+        <div class="NY">
+            <img style="width: 250px; height: 200px" src="{% static 'images/C:\Users\SAIYOD\Desktop\Django\static\image\newyork.jpg'%}" alt="">
+
+          <!-- <img
+            style="width: 250px; height: 200px"
+            src="/image/newyork.jpg"alt=""/> -->
+          <h3 style="margin-top: 20px;padding-left: 20px;">New York</h3>
+          <p style="margin: 20px 0px;padding-left: 20px;">Fri 27 Nov 2016</p>
+          <p style="padding-left: 20px;">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+          <button  style="margin-top: 20px;width: 150px;height: 50px;background-color: black;color: white;margin-left: 20px;">Buy tickets</button>
+        </div>
+        <div class="NY">
+            <!-- <img
+              style="width: 250px; height: 200px"
+              src="/image/paris.jpg"alt=""/> -->
+              <img style="width: 250px; height: 200px" src="{% static 'images/C:\Users\SAIYOD\Desktop\Django\static\image\paris.jpg'%}" alt="">
+
+            <h3 style="margin-top: 20px;padding-left: 20px;">Paris</h3>
+            <p style="margin: 20px 0px;padding-left: 20px;">Fri 27 Nov 2016</p>
+            <p style="padding-left: 20px;">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+            <button style="margin-top: 20px;width: 150px;height: 50px;background-color: black;color: white;margin-left: 20px;">Buy tickets</button>
+          </div>
+          <div class="NY">
+            <!-- <img
+              style="width: 250px; height: 200px"
+              src="/image/sanfran.jpg"alt=""/> -->
+              <img style="width: 250px; height: 200px" src="{% static 'images/C:\Users\SAIYOD\Desktop\Django\static\image\sanfran.jpg'%}" alt="">
+
+            <h3 style="margin-top: 20px;padding-left: 20px;">San Francisco</h3>
+            <p style="margin: 20px 0px;padding-left: 20px;">Fri 27 Nov 2016</p>
+            <p style="padding-left: 20px;">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+            <button style="margin-top: 20px;width: 150px;height: 50px;background-color: black;color: white;margin-left: 20px;">Buy tickets</button>
+          </div>
+      </div>
+    </div>
+    
+    <div class="Sec6">
+      <h1 style="font-size: 40px;padding-top:60px;padding-bottom: 20px;">CONTACT</h1>
+      <h3>Fan? Drop a note!</h3>
+      <div class="Addres">
+        <p> Chicago, US <br><br>
+          Phone: +00 151515 <br><br>
+          Email: mail@mail.com</p>
+          <div class="name">
+        <div class="namez">
+          <p>Name</p>
+        </div>
+        <div class="emel">
+          <p>Email</p>
+        </div>
+        <div class="massage">
+        <p>Message</p>
+      </div>
+          </div>
+      </div>
+    </div >
+<div class="Sec7">
+  <!-- <img style="width: 100%;height: 500px;" src="/image/map.jpg" alt=""> -->
+  <img style="width: 100%;height: 500px;" src="{% static 'images/  C:\Users\SAIYOD\Desktop\Django\static\image\map.jpg'%}" alt="">
+
+</div>
+<div class="footer">
+  <!-- <img style="margin-top: 60px;" src="/image/Снимок экрана 2024-02-19 210411.png" alt=""> -->
+
+  <img style="margin-top: 60px;" src="{% static 'images/  C:\Users\SAIYOD\Desktop\Django\static\image\Soc Seti.png'%}" alt="">
+  <p style="margin-top: 20px;">Powered by <span style="text-decoration: underline;">w3.css</span> </p>
+</div>
+  </body>
+</html>
+
+</body>
+</html>

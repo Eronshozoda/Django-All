@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+    /* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.video-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.video-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 15px;
+    padding: 15px;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.video-item:hover {
+    transform: scale(1.05);
+}
+
+.video-item img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.video-item h2 {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.video-item p {
+    font-size: 14px;
+    color: #777;
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.video-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.video-item a:hover h2 {
+    color: #007BFF;
+}
+
+</style>
+
+ <div class="video-list">
+    {% for video in videos %}
+    <div class="video-item">
+        <a href="video/{{video.id}}">
+            <img src="{{ video.image.url }}" alt="{{ video.title }}">
+           <a href="video/{{video.id}}"> <h2>{{ video.title }}</h2>
+            <p>Name: {{ video.title }}</p></a>
+            <p>Uploaded: {{ video.upload_date }}</p></a>
+            </a>
+         
+    </div>
+    {% endfor %}
+</div>  
+ 
+{% endblock content %}

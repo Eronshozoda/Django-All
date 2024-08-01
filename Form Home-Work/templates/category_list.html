@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+ 
+
+    
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+ 
+    
+</head>
+<body>
+    {% block content %}
+    <h3 style="text-align: center;color:green;">The List of all Categories</h3>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+
+        {% for cat in object_list %}
+        <tr>
+            <td>{{ cat.id }}</td>
+            <td>{{ cat.name }}</td>
+            <td>{{ cat.description}}</td>
+            <td><a href="{%url 'create-cars'%}"><button>Create new category</button></a></td></tr>
+        {% endfor %}
+
+    </table>
+     {% endblock content %}
+ 

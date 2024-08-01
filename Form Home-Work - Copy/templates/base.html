@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+
+.header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav li {
+    display: inline;
+    margin-right: 15px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    width: 100%;
+    bottom: 0%;
+}
+    </style>
+</head>
+<body>  
+    
+    <header class="header">
+
+        <nav class="nav">
+            <ul>
+               
+            </ul>
+        </nav>
+    </header>
+
+    {% if user.is_authenticated %}
+
+    <p>{{user.username}}<p>
+
+    <p><a href="{% url 'logout' %}">Log Out</a></p>
+
+    {% else %}
+
+    <a href="{% url 'login' %}">login</a>
+
+    {% endif %}
+
+    {% block content %}
+
+    {% endblock content %}
+
+    <footer class="footer">
+        <p>&copy; 2021 My Website</p>
+    </footer>
+  
+</body>
+</html>

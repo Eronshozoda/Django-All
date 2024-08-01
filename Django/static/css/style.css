@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.nav{
+    position: fixed;
+    color: white;
+    align-items: center;
+    display: flex;
+    /* justify-content: space-between; */
+    width: 100%;
+    height: 30px;
+    background-color: #000000;
+}
+.nav_text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+    height: 30px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    width: 120px;
+    height: 30px;
+    background-color: #009688;
+}
+.Sec1{
+    max-width: 100%;
+    height: 600px;
+    /* background-image: url(images/C:\Users\SAIYOD\Desktop\Django\static\image\icon.jpg); */
+    background-image: url("{% static 'images/C:\Users\SAIYOD\Desktop\Django\static\image\wallpaper.jpg' %}");            
+
+}
+.button{
+    position: absolute;
+    top: 500px;
+    left: 50px;
+    color: white;
+    text-align: center;
+    width: 200px;
+    height: 50px;
+    background-color:black;
+}
+.button:hover{
+    background-color: #009688;
+}
+
+
+.Txt{
+    margin-top: 80px;
+    text-align: center;
+}
+.Sec2{
+    text-align: center;
+    width: 250px;
+    height: 300px;
+}
+.All{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.Sec3{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 100px;
+    height: 470px;
+    background-color: #333333;
+}
+.TEXT{
+    padding: 10px 20px;
+    font-family: sans-serif;
+    color: white;
+    width: 300px;
+    height: 390px;
+}
+.Mount{
+    width: 280px;
+    height: 430px;
+    background-color:white;
+}
+.Mount img{
+    width:280px;
+    height: 200px;
+}
+.Mount p{
+    padding: 8px 10px;
+}
+.Sec4{
+    text-align: center;
+    height: 200px;
+    /* background-color: #009688; */
+}
+.Sec5{
+    height: 500px;
+    /* background-color: aqua; */
+}
+.Pro{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    height: 500px;
+    /* background-color:gray; */
+}
+.Basic{
+    border: 1px solid grey;
+    width: 350px;
+    height: 430px;
+    /* background-color: yellow; */
+}
+.but{
+    width: 350px;
+    height: 80px;
+    background-color:#F0F0F0;   
+}
+.Sec6{
+    display: flex;
+    justify-content: space-around;
+    height: 400px;
+    background-color:#F0F0F0;
+}
+.Contact{
+    width: 380px;
+    height:310px;
+    margin-top: 40px;
+}
+.Contact p{
+    padding: 20px 0px;
+}
+.Aboutt{
+    background-color:white;
+    margin-top: 40px;
+    /* justify-content: space-between; */
+    width: 700px;
+    height: 300px;
+    border: 1px solid black;
+}
+.Aboutt p{
+    align-items: center;
+    padding: 30px 0px;
+    border-bottom: 1px solid black;
+}
+.Sec7 img{
+    max-width: 100%;
+}
+.Sec8{
+    color: white;
+    text-align: center;
+    height: 250px;
+    background-color: black;
+}

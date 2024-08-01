@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<style>
+
+    /* style.css */
+
+h1 {
+    color: #333;
+    font-size: 24px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+
+</style>
+
+
+<h1>Log In</h1>
+
+<form action="" method="post">
+    {% csrf_token %}
+
+    {{form.as_p}}   
+
+<button type="submit">Sign Up</button>
+
+<a href="{% url 'signup' %}">Log In</a>
+</form>
+
+{% endblock content %}

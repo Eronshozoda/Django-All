@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>User lists</h1>
+    <a href="{% url 'create-user' %}">Create User</a>
+    <table>
+        <tr  style="border-collapse:collapse;">
+            <th style="border: 2px solid black;">Id</th>
+            <th style="border: 2px solid black;">First Name</th>
+            <th style="border: 2px solid black;">Last Name</th>
+            <th style="border: 2px solid black;">Age</th>
+            <th style="border: 2px solid black;">Email</th>
+            <th style="border: 2px solid black;">Phone Number</th>
+            <th style="border: 2px solid black;">Adress</th>
+
+        </tr>
+
+        {% for user in users %}
+        <tr>
+        <td style="border: 2px solid black;">{{user.id}}</td>
+        <td>{{user.first_name}}</td>
+        <td>{{user.last_name}}</td>
+        <td>{{user.age}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.phonr_number}}</td>
+        <td>{{user.adress}}</td>
+        <td><img src="{{user.user_image}}" alt=""></td>
+        <td><a href="delete-user/{{user.id}}">Delete</a></td>
+        <td><a href="update-user/{{user.id}}">Update</a></td>
+    </tr>
+
+        {% endfor %}
+
+    </table>
+</body>
+</html>

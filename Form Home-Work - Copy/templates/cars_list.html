@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+ 
+
+    
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+ 
+    
+</head>
+<body>
+    {% block content %}
+    <h3 style="text-align: center;color:green;">The List of all Cars</h3>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Date of Issue</th>
+            <th>Color</th>
+        </tr>
+
+        {% for car in object_list %}
+        <tr>
+            <td>{{ car.id }}</td>
+            <td>{{ car.name }}</td>
+            <td>{{ car.Date_of_issue }}</td>
+            <td>{{ car.color }}</td>
+            <td><a href="{%url 'create-cars'%}"><button>Create new car</button></a></td></tr>
+        {% endfor %}
+
+    </table>
+     {% endblock content %}
+ 

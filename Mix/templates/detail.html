@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+
+
+body {  
+    font-family: Arial, sans-serif;  
+    background-color: #f0f0f0;  
+    margin: 0;  
+    padding: 0;  
+    color: #333;  
+}  
+
+h1 {  
+    text-align: center;  
+    margin-top: 20px;  
+    font-size: 2.5em;  
+}  
+
+ul {  
+    list-style-type: none;  
+    padding: 0;  
+    margin: 0;  
+    display: flex;  
+    flex-wrap: wrap;  
+    justify-content: center;  
+}  
+
+li {  
+    width: 300px;  
+    margin: 10px;  
+    background-color: #fff;  
+    border-radius: 5px;  
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  
+    padding: 15px;  
+    text-align: center;  
+}  
+
+li h3 {  
+    margin-top: 0;  
+    font-size: 1.2em;  
+    color: #333;  
+}  
+
+li p {  
+    margin-bottom: 10px;  
+    font-size: 0.9em;  
+    color: #666;  
+}  
+
+video {  
+    width: 100%;  
+    height: auto;  
+    border: 1px solid #ccc;  
+    border-radius: 5px;  
+}  
+
+.video-list-container {  
+    padding: 20px;  
+}    
+
+h3,p{
+    text-align:center;
+}
+
+
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video List</title>
+</head>
+<body>
+    {% comment %} <h1>Video List</h1> {% endcomment %}
+    <ul>
+        <li>
+            <video width="320" height="240" controls>
+                <source src="{{ video.video_file.url }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h3>{{ video.title }} - {{ video.upload_date }}</h3>
+            <p>{{ video.description }}-{{video.id}}-{{video.category}}</p>
+        </li>
+    </ul>
+</body>
+</html>
+{% endblock content %}

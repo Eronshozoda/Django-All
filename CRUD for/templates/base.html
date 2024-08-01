@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exciting Website</title>
+    <style>
+        /* Add your exciting styles here */
+        header {
+            background-color: #ff6961;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            font-size: 20px;
+        }
+        
+        footer {
+            background-color: #77dd77;
+            color: #333;
+            padding: 10px;
+            text-align: center;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Exciting Website!</h1>
+    </header>
+
+    {% block content %}
+    
+    {% endblock content  %}
+
+    <footer>
+        <p>&copy; 2022 Exciting Website. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

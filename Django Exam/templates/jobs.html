@@ -1,0 +1,149 @@
+<!-- job_list.html -->
+
+
+<!DOCTYPE html>
+{%  load static %}
+<!-- {% load static %} -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .headder{
+      width: 100%;
+      height: 60px;
+      background-color:#6B8A7A;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+    }
+    .headder a{
+      color:black;
+    }
+
+
+  .foter{
+    background-color: #6B8A7A;
+    width: 100%;
+    margin-top: 100px;
+    height: 150px;
+    text-align: center;
+    align-items: center;
+
+
+  }
+
+    
+
+  </style>
+</head>
+<body>
+
+
+  <div class="headder ">
+    <a href="{% url 'list-users' %}">Список вакансий</a>
+    <a href="{% url 'create_company' %}">Создание компании</a>
+    <a href="update_company/<id>/">Редактирование компании</a>
+    <a href="companies/">Список компаний</a> 
+  </div>
+
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+ {% load  %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+
+    <title>Список вакансий</title>
+    <style>
+      body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: darkblue;
+}
+    </style>
+</head>
+<body>
+
+    <h1>Список вакансий</h1>
+
+    <table>     
+    <ul>
+
+        <tr  style="border-collapse:collapse;">
+            <th style="border: 2px solid black;">Title</th>
+            <th style="border: 2px solid black;">Salary</th>
+            <th style="border: 2px solid black;">Category</th>
+            <th style="border: 2px solid black;">Company</th>                     
+        </tr>
+
+
+
+
+        {% for job in jobs %}
+        <tr>
+            <th style="border: 1px solid black;">{{ job.title }}</th> 
+            <th style="border: 1px solid black;">{{ job.salary }}</th>
+            <th style="border: 1px solid black;">{{ job.category}}</th>
+            <th style="border: 1px solid black;">{{ job.company}}</th>
+
+
+            <td><a href="delete-jobs/{{job.id}}">Delete</a></td>
+            <td><a href="update-job/{{job.id}}">Update</a></td>
+        </tr>
+
+        {% endfor %}
+    </ul>
+</table>
+
+
+
+</body>
+</html>
+
+{% endblock %}
+
+
+
+
+
+
+<div class="foter">
+  <p style="font-family: 'Times New Roman', Times, serif;text-align: center;align-items: center;">© 2024 vazifa. Все права защищены. Powered by Yagona Tech</p>
+  </div>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!-- update_company.html -->
+{% extends 'jobs.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактирование компании</title>
+
+
+
+
+    <style>
+        /* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+
+    </style>
+
+
+
+
+
+</head>
+<body>
+    <h1>Редактирование компании</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Название компании:</label>
+        <input type="text" id="name" name="name" value="{{ company.name }}" required>
+        <br>
+        <label for="description">Описание компании:</label>
+        <textarea id="description" name="description" rows="4" required>{{ company.description }}</textarea>
+        <br>
+        <label for="address">Адрес компании:</label>
+        <input type="text" id="address" name="address" value="{{ company.address }}" required>
+        <br>
+        <label for="contact_info">Контактная информация:</label>
+        <input type="text" id="contact_info" name="contact_info" value="{{ company.contact_info }}" required>
+        <br>
+        <button type="submit">Сохранить изменения</button>
+    </form>
+</body>
+</html>

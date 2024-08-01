@@ -1,0 +1,86 @@
+<!-- job_update_form.html -->
+{% extends 'jobs.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обновление вакансии</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+    </style>
+</head>
+<body>
+    <h1>Обновление вакансии</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="title">Название:</label>
+        <input type="text" id="title" name="title" value="{{ job.title }}"><br>
+        <label for="description">Описание:</label>
+        <textarea id="description" name="description">{{ job.description }}</textarea><br>
+        <label for="salary">Зарплата:</label>
+        <input type="number" id="salary" name="salary" value="{{ job.salary }}"><br>
+        <label for="company">Компания:</label>
+        <select id="company" name="company">
+            <option value="{{ job.company.id }}">{{ job.company.name }}</option>
+
+        </select><br>
+        <label for="category">Категория:</label>
+        <select id="category" name="category">
+            <option value="{{ job.category.id }}">{{ job.category.name }}</option>
+        </select><br>
+        <button type="submit">Сохранить изменения</button>
+    </form>
+</body>
+</html>

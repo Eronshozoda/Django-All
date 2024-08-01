@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% block content %}
+<table>
+    <tr>
+        <td>ID</td>
+        <td>FULLNAME</td>
+        <td>ADDRESS</td>
+        <td>GENDER</td>
+        <td>BIRTH DATE</td>
+        <td>EMAIL</td>
+        
+    </tr>
+    {% for emp in object_list %}
+    <tr>
+        <td>{{emp.id}}</td>
+        <td>{{emp.fullname}}</td>
+        <td>{{emp.address}}</td>
+        <td>{{emp.gender}}</td>
+        <td>{{emp.date_of_birth}}</td>
+        <td>{{emp.email}}</td>
+    </tr>
+     {% endfor %} 
+</table>
+{% endblock content %}

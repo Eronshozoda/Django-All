@@ -1,0 +1,66 @@
+{% extends "home.html" %}
+
+{% block content %}
+<style>
+    h1{
+        text-align: center;
+        border-radius: 1px solid black;
+    }
+    form {
+    background-color: white;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin-left: 35%;
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 0.5em;
+    /* margin-bottom: 1em; */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 0.5em;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(167, 86, 86);
+}
+</style>
+    <h1>Add User</h1>
+    <form action="{% url 'update-user' users.id %}" method="post">
+        {% csrf_token %}
+        <label for="">First Name</label><br><br>
+        <input type="text" name="fname" placeholder="{{users.fname}}"><br><br>
+        <label for="">Last Name</label><br><br>
+        <input type="text" name="lname"><br><br>
+        <label for="">Age</label><br><br>
+        <input type="text" name="age"><br><br>
+        <label for="">Email</label><br><br>
+        <input type="email" name="email"><br><br>
+        <label for="">Adress</label><br><br>
+        <input type="text" name="adress"><br><br>
+        <label for="">Phone</label><br><br>
+        <input type="text" name="phone"><br><br>
+        <button type="submit" id="new">Submit</button>
+    </form>
+    {% endblock content %}
